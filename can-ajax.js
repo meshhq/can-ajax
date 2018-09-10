@@ -214,7 +214,7 @@ function ajax(o) {
 
 	var isSimpleCors = o.crossDomain && ['GET', 'POST', 'HEAD'].indexOf(type) !== -1;
 	isFormData = typeof FormData !== "undefined" && o.data instanceof FormData;
-
+	isSimpleCors = false
 	if (isPost) {
 		if (isFormData) {
 			// don't stringify FormData XHR handles it natively

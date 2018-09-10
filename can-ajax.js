@@ -207,9 +207,6 @@ function ajax(o) {
 	var url = o.url, data = null, type = o.type.toUpperCase();
 	var isJsonContentType = o.contentType === contentTypes.json;
 	var isPost = type === "POST" || type === "PUT";
-	if (!isPost && o.data) {
-		url += "?" + (isJsonContentType ? JSON.stringify(o.data) : param(o.data));
-	}
 	xhr.open(type, url);
 
 	// For CORS to send a "simple" request (to avoid a preflight check), the following methods are allowed: GET/POST/HEAD,
